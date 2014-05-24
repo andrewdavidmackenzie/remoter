@@ -21,3 +21,8 @@ log/
 
 # Ignore bin directory
 bin/
+
+# Ignore IntelliJ files
+.idea/
+*.iml
+*.eml
