@@ -8,3 +8,7 @@ deploy:
   app: blooming-forest-4512
   on:
     repo: andrewdavidmackenzie/remoter
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
