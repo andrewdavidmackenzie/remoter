@@ -19,6 +19,9 @@ log/
 # Ignore bin directory
 bin/
 
+# Ignore vendor bundle
+vendor/bundle/*
+
 # Ignore IntelliJ files
 .idea/
 *.iml
