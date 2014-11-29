@@ -1,0 +1,27 @@
+<h1>Listing solvers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solvers.each do |solver| %>
+      <tr>
+        <td><%= solver.title %></td>
+        <td><%= solver.description %></td>
+        <td><%= link_to 'Show', solver %></td>
+        <td><%= link_to 'Edit', edit_solver_path(solver) %></td>
+        <td><%= link_to 'Destroy', solver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solver', new_solver_path %>

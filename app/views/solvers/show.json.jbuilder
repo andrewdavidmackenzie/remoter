@@ -1,0 +1,1 @@
+json.extract! @solver, :id, :title, :description, :created_at, :updated_at
