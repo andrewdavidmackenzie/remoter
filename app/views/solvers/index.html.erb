@@ -1,27 +1,23 @@
 <h1>Listing solvers</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @solvers.each do |solver| %>
-      <tr>
-        <td><%= solver.title %></td>
-        <td><%= solver.description %></td>
-        <td><%= link_to 'Show', solver %></td>
-        <td><%= link_to 'Edit', edit_solver_path(solver) %></td>
-        <td><%= link_to 'Destroy', solver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <td class="list_description">
+                <dl>
+                    <dt><%= solver.title %></dt>
+                    <dd><%= truncate(strip_tags(solver.description), length: 80) %></dd>
+                </dl>
+            </td>
+            <td class="list_actions">
+            <td><%= link_to 'Show', solver %></td>
+            <td><%= link_to 'Edit', edit_solver_path(solver) %></td>
+            <td><%= link_to 'Destroy', solver, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            </td>
+        </tr>
     <% end %>
-  </tbody>
 </table>
 
-<br>
+<br />
 
 <%= link_to 'New Solver', new_solver_path %>
