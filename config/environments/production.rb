@@ -43,7 +43,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -80,4 +80,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Set log level according to environment variable
+  config.log_level = ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].to_sym : ('info').to_sym
+  # Use this type of command to change setting
+  # heroku config:set LOG_LEVEL=debug --remote production --app blooming-forest-4512
+
+  STDOUT.sync = true
+
+  logger = Logger.new(STDOUT)
+  logger.level = 0 # Must be numeric here - 0 :debug, 1 :info, 2 :warn, 3 :error, and 4 :fatal
+  # NOTE:   with 0 you're going to get all DB calls, etc.
+
+  Rails.logger = Rails.application.config.logger = logger
 end
