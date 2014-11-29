@@ -16,9 +16,6 @@
 /tmp
 log/
 
-# Ignore Lock files
-*.lock
-
 # Ignore bin directory
 bin/
 
