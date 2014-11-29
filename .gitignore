@@ -16,9 +16,6 @@
 /tmp
 log/
 
-# Ignore bin directory
-bin/
-
 # Ignore vendor bundle
 vendor/bundle/*
 
