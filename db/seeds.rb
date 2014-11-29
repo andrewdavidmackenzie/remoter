@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Solver.delete_all
+#...
+Solver.create!(
+  title: 'Get curl working',
+  description:
+    %{Install and configure curl on your system.}
+  )
+
+Solver.create!(
+    title: 'Get ping working',
+    description:
+        %{Install and configure ping on your system.}
+)
