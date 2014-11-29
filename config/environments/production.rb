@@ -81,16 +81,14 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Set log level according to environment variable
+  # Set log level according to environment variable - defaulting to 'info'
   config.log_level = ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].to_sym : ('info').to_sym
   # Use this type of command to change setting
   # heroku config:set LOG_LEVEL=debug --remote production --app blooming-forest-4512
 
-  STDOUT.sync = true
-
-  logger = Logger.new(STDOUT)
-  logger.level = 0 # Must be numeric here - 0 :debug, 1 :info, 2 :warn, 3 :error, and 4 :fatal
-  # NOTE:   with 0 you're going to get all DB calls, etc.
-
-  Rails.logger = Rails.application.config.logger = logger
+  # Use this to enable looging to all rails output in heroku
+  # STDOUT.sync = true
+  # logger = Logger.new(STDOUT)
+  # logger.level = 0 # Must be numeric here - 0 :debug, 1 :info, 2 :warn, 3 :error, and 4 :fatal
+  # Rails.logger = Rails.application.config.logger = logger
 end
