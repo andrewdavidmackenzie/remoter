@@ -1,5 +1,10 @@
 language: ruby
 rvm:
-  - "2.1.1"
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+- 2.1.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: q1CTORK1Wtk8B5mx1KdLEdkDp+LfeTgrEH+o1V9Z8N27pxEcyAfgq4QviqjXHof0H6ShKU9dGDTg98+TjGur/8fAMCuyXlrQS9S6pKT1UMac50Zm7iBwxamMCsbdQYvuHyNMPmyuoSxDfc+6Hs1ElN1WCnXYTW6DXodVT/RX16o=
+  app: blooming-forest-4512
+  on:
+    repo: andrewdavidmackenzie/remoter
