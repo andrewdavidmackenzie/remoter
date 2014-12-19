@@ -1,5 +1,5 @@
 == README
-
+[![travis-ci](https://travis-ci.org/andrewdavidmackenzie/remoter.png?branch=master)](https://travis-ci.org/andrewdavidmackenzie/remoter)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
